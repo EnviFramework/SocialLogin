@@ -1,0 +1,31 @@
+all:
+  drivers:
+    facebook:
+      driver_path: "Drivers/Facebook.php"
+      class_name: "\Envi\SocialLogin\Driver\Facebook"
+      app_id: ""
+      app_secret: ""
+      default_redirect_url: ""
+      scope: "email"
+      map:
+        email: email
+        first_name: first_name
+        last_name: last_name
+        social_name: name
+        link: profile_url
+        user_name: username
+    google:
+      driver_path: "Drivers/Google.php"
+      class_name: "\Envi\SocialLogin\Driver\Google"
+      app_id: ""
+      app_secret: ""
+      scope: "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+      default_redirect_url: ""
+      map:
+        email: email
+        given_name: first_name
+        family_name: last_name
+        social_name: name
+        link: profile_url
+        user_name: username
+        
