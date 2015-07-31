@@ -1,9 +1,51 @@
 <?php
+/**
+ * SocialLoginのFacebookドライバ
+ *
+ * Facebookアカウントでログインさせるクラスです
+ *
+ *
+ *
+ *
+ *
+ * PHP versions 5
+ *
+ *
+ * @category   EnviMVC拡張
+ * @package    EnviPHPが用意するエクステンション
+ * @subpackage MinifyExtension
+ * @author     Akito <akito-artisan@five-foxes.com>
+ * @copyright  2011-2015 Artisan Project
+ * @license    http://opensource.org/licenses/BSD-2-Clause The BSD 2-Clause License
+ * @version    GIT: $Id$
+ * @link       https://github.com/EnviMVC/SocialLogin
+ * @see        https://www.enviphp.net/
+ * @since      File available since Release 1.0.0
+*/
 namespace Envi\SocialLogin\Driver;
 use \Envi\SocialLogin\DriverInterface;
 use \EnviController;
 use \validator;
 
+/**
+ * SocialLoginのFacebookドライバ
+ *
+ * Facebookアカウントでログインさせるクラスです
+ *
+ *
+ *
+ *
+ * @category   EnviMVC拡張
+ * @package    EnviPHPが用意するエクステンション
+ * @subpackage MinifyExtension
+ * @author     Akito <akito-artisan@five-foxes.com>
+ * @copyright  2011-2015 Artisan Project
+ * @license    http://opensource.org/licenses/BSD-2-Clause The BSD 2-Clause License
+ * @version    GIT: $Id$
+ * @link       https://github.com/EnviMVC/SocialLogin
+ * @see        https://www.enviphp.net/
+ * @since      File available since Release 1.0.0
+*/
 class Facebook extends CommonBase implements DriverInterface
 {
     /**

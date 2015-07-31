@@ -5,6 +5,7 @@ namespace Envi\SocialLogin\Driver;
  * @subpackage
  * @sinse 0.1
  * @author     akito<akito-artisan@five-foxes.com>
+ * @doc_ignore
  */
 
 /**
@@ -13,6 +14,7 @@ namespace Envi\SocialLogin\Driver;
  * @abstract
  * @sinse 0.1
  * @author     akito<akito-artisan@five-foxes.com>
+ * @doc_ignore
  */
 abstract class CommonBase
 {

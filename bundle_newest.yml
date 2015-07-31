@@ -1,0 +1,24 @@
+name: "SocialLogin"
+type: "extension"
+description: "SocialLoginを行うためのクラス"
+keywords: "SocialLogin"
+homepage: "http://www.enviphp.net/"
+license: "LGPL-2.0"
+authors:
+    -
+        name: "akito"
+        email: "akito-artisan@five-foxes.com"
+    -
+        name: "suzunone"
+        email: "suzunone.eleven@gmail.com"
+support:
+    issues: "https://github.com/EnviMVC/SocialLogin/issues"
+    forum: "https://github.com/EnviMVC/SocialLogin/issues"
+require: {
+    php: ">=5.4"
+    envi: ">=3.4.8"
+install:
+    version: "@new"
+    mode: "git"
+    clone: "https://github.com/EnviMVC/SocialLogin.git"
+

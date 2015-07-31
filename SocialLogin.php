@@ -1,12 +1,37 @@
 <?php
+/**
+ * SocialLoginを使用するためのエクステンションクラス
+ *
+ * FacebookやGoogleアカウントでログインさせるクラスです
+ *
+ *
+ * インストール・設定
+ * --------------------------------------------------
+ * envi install-extension {app_key} {DI設定ファイル} SocialLogin
+ *
+ * コマンドでインストール出来ます。
+ *
+ *
+ *
+ *
+ * PHP versions 5
+ *
+ *
+ * @category   EnviMVC拡張
+ * @package    EnviPHPが用意するエクステンション
+ * @subpackage MinifyExtension
+ * @author     Akito <akito-artisan@five-foxes.com>
+ * @copyright  2011-2015 Artisan Project
+ * @license    http://opensource.org/licenses/BSD-2-Clause The BSD 2-Clause License
+ * @version    GIT: $Id$
+ * @link       https://github.com/EnviMVC/SocialLogin
+ * @see        https://www.enviphp.net/
+ * @since      File available since Release 1.0.0
+*/
 namespace Envi;
 use Envi\SocialLogin\Factory;
-/**
- * @package
- * @subpackage
- * @sinse 0.1
- * @author     akito<akito-artisan@five-foxes.com>
- */
+
+
 require __DIR__.'/Exceptions/SocialLoginException.php';
 require __DIR__.'/Exceptions/DriverNotFoundException.php';
 require __DIR__.'/Exceptions/LoginErrorException.php';
@@ -15,12 +40,25 @@ require __DIR__.'/Base/DriverCommonBase.php';
 require __DIR__.'/Factory/Factory.php';
 
 
+
 /**
- * @package
- * @subpackage
- * @sinse 0.1
- * @author     akito<akito-artisan@five-foxes.com>
- */
+ * SocialLoginを使用するためのエクステンションクラス
+ *
+ * FacebookやGoogleアカウントでログインさせるクラスです
+ *
+ *
+ *
+ * @category   EnviMVC拡張
+ * @package    EnviPHPが用意するエクステンション
+ * @subpackage MinifyExtension
+ * @author     Akito <akito-artisan@five-foxes.com>
+ * @copyright  2011-2015 Artisan Project
+ * @license    http://opensource.org/licenses/BSD-2-Clause The BSD 2-Clause License
+ * @version    GIT: $Id$
+ * @link       https://github.com/EnviMVC/SocialLogin
+ * @see        https://www.enviphp.net/
+ * @since      File available since Release 1.0.0
+*/
 class SocialLogin
 {
     public $system_config ;
@@ -50,7 +88,13 @@ class SocialLogin
     }
     /* ----------------------------------------- */
 
-
+    /**
+     * +-- 標準のredirect_urlをセットする
+     *
+     * @access      public
+     * @param       string $redirect_url
+     * @return      void
+     */
     public function setDefaultRedirectUrl($redirect_url)
     {
         $this->driver()->setRedirectUrl($redirect_url);
@@ -59,6 +103,8 @@ class SocialLogin
 
     /**
      * +-- ログインしてユーザー情報を取得する
+     *
+     * 戻り先アクションでコールします
      *
      * @access      public
      * @return      void
@@ -73,23 +119,24 @@ class SocialLogin
 
 
     /**
-     * +-- 使用するソーシャルログインセレクタを選択する
+     * +-- 使用するソーシャルログインドライバを選択する
      *
      * @access      public
      * @param       string $driver_name ドライバ名
-     * @return      void
+     * @return      DriverInterface
      */
     public function driverSelect($driver_name)
     {
         $this->Driver = $this->factory()->Driver($driver_name);
+        return $this->Driver;
     }
     /* ----------------------------------------- */
 
     /**
-     * +-- Driverオブジェクト取得
+     * +-- 選択されているDriverオブジェクト取得
      *
      * @access      private
-     * @return      void
+     * @return      DriverInterface
      */
     private function driver()
     {
