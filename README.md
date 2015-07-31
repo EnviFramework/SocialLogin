@@ -1,21 +1,16 @@
-MarkdownExtraを使用するためのエクステンションクラス
+SocialLoginを使用するためのエクステンションクラス
 =================================
 
 概要
 --------------------------------------------------
-Markdown拡張である、MarkdownExtra形式で記述されたテキストを、HTMLにコンパイルするエクステンションです。
+FacebookやGoogleアカウントでログインさせるクラスです
 
-MarkdownExtraに関する詳細は、
-
-https://michelf.ca/projects/php-markdown/extra/
-
-を参照して下さい。
 
 パッケージ管理
 --------------------------------------------------
-EnviMarkdownExtensionパッケージをEnviMvcにバンドルさせるには、
+SocialLoginパッケージをEnviMvcにバンドルさせるには、
 
-`envi install-bundle new https://raw.githubusercontent.com/EnviMVC/EnviMarkdownExtension/master/bundle.yml`
+`envi install-bundle new https://raw.githubusercontent.com/EnviMVC/SocialLogin/master/bundle.yml`
 
 コマンドを実行します。
 
@@ -24,7 +19,7 @@ EnviMarkdownExtensionパッケージをEnviMvcにバンドルさせるには、
 
 パッケージがバンドルされていれば、
 
-`envi install-extension {app_key} {DI設定ファイル} markdown`
+`envi install-extension {app_key} {DI設定ファイル} SocialLogin`
 
 コマンドでインストール出来ます。
 
